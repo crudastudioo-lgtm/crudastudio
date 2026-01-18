@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Tu Primer Website - Cruda Studio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background: #F5F5DC;
+        }
+
+        header {
+            background: #F5F5DC;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid #E5E1D6;
+        }
+
+        header img {
+            max-width: 120px;
+        }
+
+        .workshop-hero {
+            background: #FFFFFF;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .workshop-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .workshop-hero .emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .workshop-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #333;
+        }
+
+        .price-box {
+            background: #000000;
+            color: #F5F5DC;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .benefits {
+            background: #FFFFFF;
+            padding: 4rem 2rem;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            padding: 2rem;
+            background: #F5F5DC;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .benefit-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .benefit-card p {
+            color: #333;
+        }
+
+        .programa {
+            padding: 4rem 2rem;
+            background: #F5F5DC;
+        }
+
+        .programa h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .programa-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .programa-item {
+            padding: 1.5rem 0;
+            border-bottom: 2px solid #F5F5DC;
+        }
+
+        .programa-item:last-child {
+            border-bottom: none;
+        }
+
+        .programa-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .programa-item p {
+            color: #333;
+        }
+
+        .para-quien {
+            background: #FFFFFF;
+            padding: 4rem 2rem;
+        }
+
+        .para-quien h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .para-quien ul {
+            max-width: 700px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .para-quien li {
+            padding: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            background: #F5F5DC;
+            border-radius: 10px;
+        }
+
+        .para-quien li::before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .cta-final {
+            background: #000000;
+            color: #F5F5DC;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .cta-final p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #000000;
+            color: #F5F5DC;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            background: #F5F5DC;
+            color: #000000;
+        }
+
+        .info-boxes {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .info-box strong {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            background: #000000;
+            color: #F5F5DC;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .workshop-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .benefits h2,
+            .programa h2,
+            .para-quien h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo1.png" alt="Cruda Studio">
+        </a>
+    </header>
+
+    <section class="workshop-hero">
+        <div class="emoji">💻</div>
+        <h1>Tu Primer Website</h1>
+        <p>Crea tu sitio web profesional desde cero. Sin código complicado, sin depender de nadie. 100% práctico y directo.</p>
+        <div class="price-box">$900 MXN</div>
+        <a href="#inscripcion" class="btn">Reservar mi lugar</a>
+    </section>
+
+    <section class="benefits">
+        <h2>¿Qué vas a lograr?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="icon">🌐</div>
+                <h3>Tu Sitio en Vivo</h3>
+                <p>Saldrás del workshop con tu website publicado y con dominio propio.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">🎨</div>
+                <h3>Diseño Profesional</h3>
+                <p>Aprende HTML y CSS básico para crear páginas que se vean increíbles.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">📱</div>
+                <h3>100% Responsive</h3>
+                <p>Tu sitio se verá perfecto en computadoras, tablets y celulares.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">⚡</div>
+                <h3>Independencia Total</h3>
+                <p>Ya no pagarás diseñadores por cada cambio pequeño que necesites.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="programa">
+        <h2>Programa del Workshop</h2>
+        <div class="programa-list">
+            <div class="programa-item">
+                <h3>Módulo 1: Estructura HTML (45 min)</h3>
+                <p>Etiquetas básicas, estructura de página, headers, secciones y navegación.</p>
+            </div>
+            <div class="programa-item">
+                <h3>Módulo 2: Diseño con CSS (60 min)</h3>
+                <p>Colores, fuentes, espaciado, layouts y diseño responsive desde cero.</p>
+            </div>
+            <div class="programa-item">
+                <h3>Módulo 3: Creación de tu Landing Page (45 min)</h3>
+                <p>Hero section, formularios de contacto, call-to-actions efectivos.</p>
+            </div>
+            <div class="programa-item">
+                <h3>Módulo 4: Publicación (30 min)</h3>
+                <p>Dominio, hosting, GitHub Pages y cómo mantener tu sitio actualizado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="para-quien">
+        <h2>¿Para quién es este workshop?</h2>
+        <ul>
+            <li>Emprendedores que necesitan presencia web sin gastar fortunas</li>
+            <li>Freelancers que quieren crear su portafolio</li>
+            <li>Dueños de negocio cansados de depender de diseñadores</li>
+            <li>Principiantes absolutos - no necesitas saber nada de código</li>
+            <li>Cualquiera que quiera tener control total de su sitio web</li>
+        </ul>
+    </section>
+
+    <section class="cta-final" id="inscripcion">
+        <h2>Reserva tu lugar ahora</h2>
+        <p>En 3 horas tendrás tu primer sitio web profesional en vivo.</p>
+        
+        <div class="info-boxes">
+            <div class="info-box">
+                <strong>📅 Fecha</strong>
+                <span>Próximamente</span>
+            </div>
+            <div class="info-box">
+                <strong>⏰ Duración</strong>
+                <span>3 horas</span>
+            </div>
+            <div class="info-box">
+                <strong>💻 Modalidad</strong>
+                <span>Online en vivo</span>
+            </div>
+        </div>
+
+        <a href="#" class="btn btn-light">Inscribirme ahora - $900</a>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Incluye templates, código base y hosting gratis por 1 año.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Cruda Studio. Todos los derechos reservados.</p>
+        <p><a href="index.html" style="color: #F5F5DC; text-decoration: none;">← Volver al inicio</a></p>
+    </footer>
+</body>
+</html>
