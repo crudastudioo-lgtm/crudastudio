@@ -1,389 +1,382 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop Meta Ads - Cruda Studio</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Meta Ads - Cruda Studio</title>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            color: #000000;
-            background: #F5F5DC;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .section-light {
+  color: #000000;
+}
 
-        /* Header simple */
-        header {
-            background: #F5F5DC;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            border-bottom: 2px solid #E5E1D6;
-        }
+.section-dark {
+  color: #f4efea;
+}
 
-        header img {
-            max-width: 120px;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      background: #000000;
+      color: #000000;
+    }
 
-        /* Hero específico del workshop */
-        .workshop-hero {
-            background: #FFFFFF;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
+    /* HEADER */
+    header {
+      background: #000000;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 2px solid #f4efea;
+    }
 
-        .workshop-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
+    header img {
+      max-width: 120px;
+    }
 
-        .workshop-hero .emoji {
-            font-size: 5rem;
-            margin-bottom: 1rem;
-        }
+    /* HERO */
+    .workshop-hero {
+      background: #ffffff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
 
-        .workshop-hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: #333;
-        }
+    .workshop-hero .emoji {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+    }
 
-        .price-box {
-            background: #000000;
-            color: #F5F5DC;
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-        }
+    .workshop-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
 
-        /* Contenedor principal */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
+    .workshop-hero p {
+      font-size: 1.3rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      color: #000000;
+    }
 
-        /* Sección de beneficios */
-        .benefits {
-            background: #FFFFFF;
-            padding: 4rem 2rem;
-        }
+    .price-box {
+      background: #000000;
+      color: #f4efea;
+      padding: 1rem 2.5rem;
+      border-radius: 12px;
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+    }
 
-        .benefits h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 900;
-        }
+    /* BOTONES */
+    .btn {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .btn-dark {
+      background: #000000;
+      color: #ffffff;
+    }
 
-        .benefit-card {
-            padding: 2rem;
-            background: #F5F5DC;
-            border-radius: 15px;
-            text-align: center;
-        }
+    .btn-light {
+      background: #f4efea;
+      color: #000000;
+    }
 
-        .benefit-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
 
-        .benefit-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
+    /* PROGRAMA */
+    .programa {
+      background: #f4efea;
+      padding: 4rem 2rem;
+    }
 
-        .benefit-card p {
-            color: #333;
-        }
+    .programa h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 3rem;
+    }
 
-        /* Programa del workshop */
-        .programa {
-            padding: 4rem 2rem;
-            background: #F5F5DC;
-        }
+    .programa-list {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem;
+      border-radius: 20px;
+    }
 
-        .programa h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 900;
-        }
+    .programa-item {
+      padding: 1.5rem 0;
+      border-bottom: 2px solid #f4efea;
+    }
 
-        .programa-list {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #FFFFFF;
-            padding: 3rem;
-            border-radius: 20px;
-        }
+    .programa-item:last-child {
+      border-bottom: none;
+    }
 
-        .programa-item {
-            padding: 1.5rem 0;
-            border-bottom: 2px solid #F5F5DC;
-        }
+    .programa-item h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
 
-        .programa-item:last-child {
-            border-bottom: none;
-        }
+    /* BENEFICIOS */
+    .benefits {
+      background: #ffffff;
+      padding: 4rem 2rem;
+    }
 
-        .programa-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
+    .benefits h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 3rem;
+    }
 
-        .programa-item p {
-            color: #333;
-        }
+    .benefits-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
 
-        /* Para quién es */
-        .para-quien {
-            background: #FFFFFF;
-            padding: 4rem 2rem;
-        }
+    .benefit-card {
+      background: #f4efea;
+      padding: 2.5rem 2rem;
+      border-radius: 18px;
+      text-align: center;
+    }
 
-        .para-quien h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 900;
-        }
+    .benefit-card .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
 
-        .para-quien ul {
-            max-width: 700px;
-            margin: 0 auto;
-            list-style: none;
-        }
+    .benefit-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
 
-        .para-quien li {
-            padding: 1rem;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            background: #F5F5DC;
-            border-radius: 10px;
-        }
+    /* PARA QUIÉN */
+    .para-quien {
+      background: #ffffff;
+      padding: 4rem 2rem;
+    }
 
-        .para-quien li::before {
-            content: "✓ ";
-            font-weight: bold;
-            margin-right: 0.5rem;
-            font-size: 1.4rem;
-        }
+    .para-quien h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 3rem;
+    }
 
-        /* CTA Final */
-        .cta-final {
-            background: #000000;
-            color: #F5F5DC;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
+    .para-quien ul {
+      max-width: 750px;
+      margin: 0 auto;
+      list-style: none;
+    }
 
-        .cta-final h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
+    .para-quien li {
+      background: #f4efea;
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
 
-        .cta-final p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .para-quien li::before {
+      content: "✓ ";
+      font-weight: 900;
+      margin-right: 0.5rem;
+    }
 
-        /* Botones */
-        .btn {
-            display: inline-block;
-            background: #000000;
-            color: #F5F5DC;
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-        }
+    /* CTA FINAL */
+    .cta-final {
+      background: #000000;
+      color: #f4efea;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
 
-        .btn:hover {
-            opacity: 0.8;
-            transform: translateY(-2px);
-        }
+    .cta-final h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
 
-        .btn-light {
-            background: #F5F5DC;
-            color: #000000;
-        }
+    .cta-final p {
+      font-size: 1.3rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
 
-        /* Info adicional */
-        .info-boxes {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
+    .info-boxes {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
 
-        .info-box {
-            background: rgba(255,255,255,0.1);
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
+    .info-box {
+      border: 2px solid #f4efea;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+    }
 
-        .info-box strong {
-            display: block;
-            font-size: 1.5rem;
-            margin-bottom: 0.3rem;
-        }
+    .info-box strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
 
-        /* Footer simple */
-        footer {
-            background: #000000;
-            color: #F5F5DC;
-            text-align: center;
-            padding: 2rem;
-        }
+    /* FOOTER */
+    footer {
+      background: #000000;
+      color: #f4efea;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .workshop-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .benefits h2,
-            .programa h2,
-            .para-quien h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    footer a {
+      color: #f4efea;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .workshop-hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .cta-final h2 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <a href="index.html">
-            <img src="logo1.png" alt="Cruda Studio">
-        </a>
-    </header>
 
-    <section class="workshop-hero">
-        <div class="emoji">📱</div>
-        <h1>Workshop Meta Ads</h1>
-        <p>Domina Facebook e Instagram Ads desde cero. Aprende a crear campañas que realmente venden, no solo que acumulan likes.</p>
-        <div class="price-box">$1,200 MXN</div>
-        <a href="#inscripcion" class="btn">Reservar mi lugar</a>
-    </section>
+<header>
+  <a href="index.html">
+    <img src="logo1.png" alt="Cruda Studio">
+  </a>
+</header>
 
-    <section class="benefits">
-        <h2>¿Qué vas a lograr?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="icon">🎯</div>
-                <h3>Segmentación Precisa</h3>
-                <p>Aprende a encontrar exactamente a tu cliente ideal sin desperdiciar presupuesto.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="icon">💰</div>
-                <h3>Optimiza tu Inversión</h3>
-                <p>Reduce costos por conversión y maximiza el retorno de cada peso invertido.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="icon">📊</div>
-                <h3>Analiza como Pro</h3>
-                <p>Interpreta métricas reales y toma decisiones basadas en datos, no en corazonadas.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="icon">🚀</div>
-                <h3>Escala tus Campañas</h3>
-                <p>Estrategias probadas para crecer sin perder rentabilidad.</p>
-            </div>
-        </div>
-    </section>
+<section class="workshop-hero">
+  <div class="emoji">📱</div>
+  <h1>Workshop Meta Ads con IA</h1>
+  <p>Aprende a crear campañas que venden de verdad. Sin humo. Sin likes inútiles. Ads crudos.</p>
+  <div class="price-box">$1,200 MXN</div><br>
+  <a href="#inscripcion" class="btn btn-dark">Reservar mi lugar</a>
+</section>
 
-    <section class="programa">
-        <h2>Programa del Workshop</h2>
-        <div class="programa-list">
-            <div class="programa-item">
-                <h3>Módulo 1: Fundamentos (45 min)</h3>
-                <p>Estructura de Meta Ads, píxel de Facebook, eventos de conversión y audiencias personalizadas.</p>
-            </div>
-            <div class="programa-item">
-                <h3>Módulo 2: Creación de Campañas (60 min)</h3>
-                <p>Objetivos correctos, estructura de conjuntos de anuncios, presupuestos y pujas estratégicas.</p>
-            </div>
-            <div class="programa-item">
-                <h3>Módulo 3: Creatividades que Venden (45 min)</h3>
-                <p>Copys persuasivos, diseños que convierten, testing A/B y mejores prácticas.</p>
-            </div>
-            <div class="programa-item">
-                <h3>Módulo 4: Optimización y Escala (60 min)</h3>
-                <p>Lectura de métricas, cuándo escalar, cuándo pausar, remarketing avanzado.</p>
-            </div>
-            <div class="programa-item">
-                <h3>Sesión de Casos Reales (30 min)</h3>
-                <p>Análisis de campañas exitosas y errores comunes a evitar.</p>
-            </div>
-        </div>
-    </section>
+<section class="cta-final section-dark" id="inscripcion">
+  <h2>Reserva tu lugar</h2>
+  <p>Workshop en vivo. Cupos limitados.</p>
 
-    <section class="para-quien">
-        <h2>¿Para quién es este workshop?</h2>
-        <ul>
-            <li>Emprendedores que quieren vender más sin depender de agencias</li>
-            <li>Dueños de negocios que han gastado en ads sin ver resultados</li>
-            <li>Marketers que quieren especializarse en Meta Ads</li>
-            <li>Freelancers que buscan ofrecer este servicio a clientes</li>
-            <li>Cualquiera que quiera aprender a anunciarse correctamente en Facebook e Instagram</li>
-        </ul>
-    </section>
+  <div class="info-boxes">
+    <div class="info-box">
+      <strong>📅 Fecha</strong>
+      Próximamente
+    </div>
+    <div class="info-box">
+      <strong>⏰ Duración</strong>
+      4 horas
+    </div>
+    <div class="info-box">
+      <strong>💻 Modalidad</strong>
+      Presencial
+    </div>
+  </div>
 
-    <section class="cta-final" id="inscripcion">
-        <h2>Reserva tu lugar ahora</h2>
-        <p>Cupos limitados. El próximo workshop es en vivo y podrás hacer preguntas en tiempo real.</p>
-        
-        <div class="info-boxes">
-            <div class="info-box">
-                <strong>📅 Fecha</strong>
-                <span>Próximamente</span>
-            </div>
-            <div class="info-box">
-                <strong>⏰ Duración</strong>
-                <span>4 horas</span>
-            </div>
-            <div class="info-box">
-                <strong>💻 Modalidad</strong>
-                <span>Presencial</span>
-            </div>
-        </div>
+<section class="programa section-light">
+  <h2>Programa del Workshop</h2>
+  <div class="programa-list">
+    <div class="programa-item">
+      <h3>Módulo 1 · Fundamentos</h3>
+      <p>Estructura, píxel, eventos y audiencias.</p>
+    </div>
+    <div class="programa-item">
+      <h3>Módulo 2 · Campañas</h3>
+      <p>Objetivos, presupuestos y estructura correcta.</p>
+    </div>
+    <div class="programa-item">
+      <h3>Módulo 3 · Creatividades</h3>
+      <p>Copys, visuales y testing que convierten.</p>
+    </div>
+    <div class="programa-item">
+      <h3>Módulo 4 · Optimización</h3>
+      <p>Stop, escala y remarketing.</p>
+    </div>
+  </div>
+</section>
 
-        <a href="#" class="btn btn-light">Inscribirme ahora - $1,200</a>
-        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Pago seguro. Incluye grabación y materiales descargables.</p>
-    </section>
+<section class="benefits section-light">
+  <h2>¿Qué vas a lograr?</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="icon">🎯</div>
+      <h3>Mejor segmentación</h3>
+      <p>Llegar a quien sí compra.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">💰</div>
+      <h3>Menos gasto inútil</h3>
+      <p>Optimizar cada peso.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">📊</div>
+      <h3>Decisiones reales</h3>
+      <p>Basadas en datos.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">🚀</div>
+      <h3>Escalar</h3>
+      <p>Sin perder rentabilidad.</p>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Cruda Studio. Todos los derechos reservados.</p>
-        <p><a href="index.html" style="color: #F5F5DC; text-decoration: none;">← Volver al inicio</a></p>
-    </footer>
+<section class="para-quien section-light">
+  <h2>¿Para quién es?</h2>
+  <ul>
+    <li>Emprendedores y dueños de negocio</li>
+    <li>Marketers y freelancers</li>
+    <li>Personas hartas de tirar dinero en ads</li>
+  </ul>
+</section>
+
+  <p style="margin-top:1rem; font-size:0.9rem; opacity:0.8;">
+    Pago seguro · Incluye grabación y materiales
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2026 Cruda Studio</p>
+  <p><a href="index.html">← Volver al inicio</a></p>
+</footer>
+
 </body>
 </html>
