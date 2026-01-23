@@ -62,6 +62,7 @@
     overflow: hidden;
 }
 
+<<<<<<< HEAD
 /* Círculo grande arriba derecha */
 .hero::before {
     content: '';
@@ -88,6 +89,8 @@
     z-index: 0;
 }
 
+=======
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
 .hero-content {
     max-width: 1400px;
     margin: 0 auto;
@@ -161,6 +164,142 @@
             line-height: 1.8;
             color: #000000;
         }
+<<<<<<< HEAD
+=======
+
+        /* About Me */
+        #about-me {
+    padding: 5rem 2rem;
+    background: linear-gradient(180deg, #f3efea 0%, #ffffff 100%);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+.about-content {
+    color: #333;
+}
+
+.about-label {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.about-intro {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .about-image img {
+        margin: 0 auto;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #about-me {
+        padding: 3rem 1rem;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    
+    .about-intro {
+        font-size: 1.1rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+}
+
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
 /* Services Section */
 #servicios {
     background: #f4efea;
@@ -184,16 +323,28 @@
     text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+.service-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+
+}
+
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+<<<<<<< HEAD
 .service-icon {
     font-size: 4rem;
     margin-bottom: 1.5rem;
 }
 
+=======
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
 .service-card h3 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
@@ -224,6 +375,7 @@
     margin-right: 0.5rem;
 }
         /* Workshops Grid */
+<<<<<<< HEAD
         .workshops-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -341,6 +493,192 @@
             margin-bottom: 1.5rem;
             color: #000000;
         }
+=======
+.workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.workshop-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.workshop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.workshop-header {
+    background: #000000;
+    padding: 0;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.workshop-header img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.workshop-content {
+    padding: 2.5rem;
+}
+
+.workshop-content p {
+    margin-bottom: 1.5rem;
+    color: #000000;
+    line-height: 1.8;
+}
+
+.workshop-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+    align-items: flex-start;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.info-item span:first-child {
+    font-size: 1.2rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #000;
+    margin: 1.5rem 0 1rem 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .price {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .price {
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .workshop-info {
+        gap: 0.6rem;
+        margin: 1rem 0;
+    }
+    
+    .info-item {
+        font-size: 0.9rem;
+    }
+}
+
+        /* Ebooks Section */
+#ebooks {
+    background: #ffffff;
+    max-width: 100%;
+    padding: 3rem 1rem;
+}
+
+.ebooks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.ebook-card {
+    background: white;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.ebook-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ebook-icon {
+    width: auto;
+    height: 120px;
+    max-width: 120px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    object-fit: contain;
+}
+
+.ebook-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #000000;
+}
+
+.ebook-card p {
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #ebooks {
+        padding: 2rem 0.5rem;
+    }
+    
+    .ebooks-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .ebook-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .ebook-icon {
+        height: 120px;
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ebook-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .ebook-icon {
+        height: 120px;
+        max-width: 120px;
+    }
+}
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
 
         /* CTA */
         .cta-section {
@@ -425,6 +763,140 @@
         html {
             scroll-behavior: smooth;
         }
+<<<<<<< HEAD
+=======
+
+        #contacto {
+    padding: 5rem 2rem;
+    background: #f5f1eb;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    color: #333;
+    opacity: 0.8;
+}
+
+.contact-form {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: #f5f1eb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #000000;
+    background: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+}
+
+.btn-submit:hover {
+    background: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-submit svg {
+    transition: transform 0.3s;
+}
+
+.btn-submit:hover svg {
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #contacto {
+        padding: 3rem 1rem;
+    }
+    
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-header p {
+        font-size: 1rem;
+    }
+    
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.8rem;
+    }
+    
+    .btn-submit {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
     </style>
     <style>
 
@@ -457,12 +929,43 @@
         </div>
     </section>
 
+<<<<<<< HEAD
     <section id="why-cruda">
         <div class="why-content">
             <h2>¿Por qué existe Cruda?</h2>
             <p>Porque estamos hartos del marketing inflado. Cansados de promesas vacías, de "gurús" que venden humo y de estrategias que solo funcionan en teoría.</p>
             <p>Cruda nació de la frustración. De ver a emprendedores gastar miles en cursos que no sirven, en agencias que cobran fortunas por trabajo mediocre, en "expertos" que nunca han vendido nada real.</p>
             <p>Aquí no hay filtros. Te enseñamos lo que realmente funciona, sin adornos ni promesas imposibles. Marketing directo, honesto y efectivo. Tal como debería ser.</p>
+=======
+    <section id="about-me">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="images/quien-soy.webp" alt="agencia de marketing en cancun">
+        </div>
+        <div class="about-content">
+            <h2>Hola, soy Daniela</h2>
+            <p class="about-intro">Abogada, emprendedora, accionista y experta en Marketing Digital, Websites y creadora de estrategias que funcionan.</p>
+            <p>Ayudo a emprendedores, freelancers y empresas a crecer en el mundo digital. Me especializo en crear estrategias de marketing que no solo se ven bien, sino que generan resultados.</p>
+            <p>Mi misión es simple: hacer que el marketing digital sea accesible para todos, sin promesas falsas, sin tecnicismos complicados y con resultados medibles.</p>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Años de experiencia</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Proyectos completados</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why-cruda">
+        <div class="why-content">
+            <h2>¿Por qué existe Cruda?</h2>          
+            <p>Cruda nació de la frustración. De ver a emprendedores gastar miles en cursos que no sirven, en agencias que cobran fortunas por trabajo mediocre, en "expertos" que nunca han vendido nada real.</p>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
         </div>
     </section>
 
@@ -470,11 +973,19 @@
         <h2>Próximos Workshops</h2>
         <div class="workshops-grid">
             <div class="workshop-card">
+<<<<<<< HEAD
                 <div class="workshop-header">
                     <div class="workshop-icon">📱</div>
                     <h3>Meta Ads con IA</h3>
                 </div>
                 <div class="workshop-content">
+=======
+               <div class="workshop-header">
+    <img src="images/workshop1.webp" alt="agencia de marketing">
+</div>
+<div class="workshop-content">
+    <h3>Meta Ads con IA</h3>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                     <p>Domina Facebook e Instagram Ads. Aprende segmentación avanzada, optimización de campañas y estrategias que realmente convierten.</p>
                     <div class="workshop-info">
                         <div class="info-item">
@@ -485,18 +996,51 @@
                             <span>⏰</span>
                             <span>4 horas</span>
                         </div>
+<<<<<<< HEAD
                     </div>
                     <div class="price">$1,200</div>
                     <a href="meta-ads-con-ia.html" class="btn btn-full">Reservar Ahora</a>
+=======
+                         <div class="info-item">
+                <span>👥</span>
+                <span>Capacidad de 20 personas</span>
+            </div>
+            <div class="info-item">
+                <span>📍</span>
+                <span>Presencial</span>
+            </div>
+            <div class="info-item">
+                <span>🖥️</span>
+                <span>Práctica en la clase</span>
+            </div>
+            <div class="info-item">
+                <span>📖</span>
+                <span>Guía completa de la clase</span>
+            </div>
+            <div class="info-item">
+                <span>🏆</span>
+                <span>Certificado de participación</span>
+            </div>
+                    </div>
+                    <div class="price">$1,200</div>
+                    <a href="workshops/meta-ads-con-ia.html" class="btn btn-full">Reservar Ahora</a>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                 </div>
             </div>
 
             <div class="workshop-card">
                 <div class="workshop-header">
+<<<<<<< HEAD
                     <div class="workshop-icon">🔍</div>
                     <h3>Aprende Google Ads desde 0</h3>
                 </div>
                 <div class="workshop-content">
+=======
+                    <img src="images/workshop2.webp" alt="agencia de marketing">                    
+                </div>
+                <div class="workshop-content">
+                    <h3>Aprende Google Ads desde 0</h3>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                     <p>Aparece en los primeros resultados de Google. Estrategias de búsqueda, display y remarketing para captar clientes de alto valor.</p>
                     <div class="workshop-info">
                         <div class="info-item">
@@ -507,18 +1051,51 @@
                             <span>⏰</span>
                             <span>4 horas</span>
                         </div>
+<<<<<<< HEAD
                     </div>
                     <div class="price">$1,200</div>
                     <a href="aprende-google-ads.html" class="btn btn-full">Reservar Ahora</a>
+=======
+                         <div class="info-item">
+                <span>👥</span>
+                <span>Capacidad de 20 personas</span>
+            </div>
+            <div class="info-item">
+                <span>📍</span>
+                <span>Presencial</span>
+            </div>
+            <div class="info-item">
+                <span>🖥️</span>
+                <span>Práctica en la clase</span>
+            </div>
+            <div class="info-item">
+                <span>📖</span>
+                <span>Guía completa de la clase</span>
+            </div>
+            <div class="info-item">
+                <span>🏆</span>
+                <span>Certificado de participación</span>
+            </div>
+                    </div>
+                    <div class="price">$1,200</div>
+                    <a href="workshops/aprende-google-ads.html" class="btn btn-full">Reservar Ahora</a>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                 </div>
             </div>
 
             <div class="workshop-card">
                 <div class="workshop-header">
+<<<<<<< HEAD
                     <div class="workshop-icon">💻</div>
                     <h3>Tu Primer Website sin Morir en el Intento</h3>
                 </div>
                 <div class="workshop-content">
+=======
+                    <img src="images/workshop3.webp" alt="agencia de marketing">
+                </div>
+                <div class="workshop-content">
+                    <h3>Sitios web sin ser técnico.</h3>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                     <p>Crea tu sitio web profesional desde cero. HTML, CSS y publicación con dominio propio. Sin código complicado, 100% práctico.</p>
                     <div class="workshop-info">
                         <div class="info-item">
@@ -529,18 +1106,51 @@
                             <span>⏰</span>
                             <span>3 horas</span>
                         </div>
+<<<<<<< HEAD
                     </div>
                     <div class="price">$900</div>
                     <a href="websites.html" class="btn btn-full">Reservar Ahora</a>
+=======
+                         <div class="info-item">
+                <span>👥</span>
+                <span>Capacidad de 20 personas</span>
+            </div>
+            <div class="info-item">
+                <span>📍</span>
+                <span>Presencial</span>
+            </div>
+            <div class="info-item">
+                <span>🖥️</span>
+                <span>Práctica en la clase</span>
+            </div>
+            <div class="info-item">
+                <span>📖</span>
+                <span>Guía completa de la clase</span>
+            </div>
+            <div class="info-item">
+                <span>🏆</span>
+                <span>Certificado de participación</span>
+            </div>
+                    </div>
+                    <div class="price">$900</div>
+                    <a href="workshops/websites.html" class="btn btn-full">Reservar Ahora</a>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                 </div>
             </div>
 
             <div class="workshop-card">
                 <div class="workshop-header">
+<<<<<<< HEAD
                     <div class="workshop-icon">🎯</div>
                     <h3>Plan SEO Orgánico con IA</h3>
                 </div>
                 <div class="workshop-content">
+=======
+                     <img src="images/workshop4.webp" alt="agencia de marketing">                  
+                </div>
+                <div class="workshop-content">
+                    <h3>Plan SEO Orgánico con IA</h3>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                     <p>Posiciónate en Google como uno de los pioneros en tu rama. Plan 1 a 1 para que Google te voltee a ver.</p>
                     <div class="workshop-info">
                         <div class="info-item">
@@ -551,9 +1161,35 @@
                             <span>⏰</span>
                             <span>2 horas</span>
                         </div>
+<<<<<<< HEAD
                     </div>
                     <div class="price">$900</div>
                     <a href="plan-seo.html" class="btn btn-full">Reservar Ahora</a>
+=======
+                        <div class="info-item">
+                <span>👥</span>
+                <span>Capacidad 20 personas</span>
+            </div>
+            <div class="info-item">
+                <span>📍</span>
+                <span>Presencial</span>
+            </div>
+            <div class="info-item">
+                <span>🖥️</span>
+                <span>Práctica en la clase</span>
+            </div>
+            <div class="info-item">
+                <span>📖</span>
+                <span>Guía completa de la clase</span>
+            </div>
+            <div class="info-item">
+                <span>🏆</span>
+                <span>Certificado de participación</span>
+            </div>
+                    </div>
+                    <div class="price">$900</div>
+                    <a href="workshops/plan-seo.html" class="btn btn-full">Reservar Ahora</a>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                 </div>
             </div>
         </div>
@@ -611,23 +1247,38 @@
         <h2>Recursos Descargables</h2>
         <div class="ebooks-grid">
             <div class="ebook-card">
+<<<<<<< HEAD
                 <div class="ebook-icon">📘</div>
                 <h3>Mi Primer Sitio Web Sin Morir en el Intento</h3>
                 <p>Guía completa paso a paso. Incluye código, recursos gratuitos y checklist para lanzar tu web profesional.</p>
                 <div class="price">$299</div>
+=======
+                <img src="images/primer-sitio-web.png" alt="agencia de marketing" class="ebook-icon">
+                <h3>Mi Primer Sitio Web Sin Morir en el Intento</h3>
+                <p>Guía completa paso a paso. Incluye código, recursos gratuitos y checklist para lanzar tu web profesional.</p>
+                <div class="price">$129 MXN</div>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                 <a href="#" class="btn">Descargar Ahora</a>
             </div>
 
             <div class="ebook-card">
+<<<<<<< HEAD
                 <div class="ebook-icon">🤖</div>
                 <h3>GUÍA: Copys para Vender con IA</h3>
                 <p>Usa IA para crear textos persuasivos. Prompts probados, ejemplos reales y frameworks que funcionan.</p>
                 <div class="price">$399</div>
+=======
+               <img src="images/prompt-que-venden.png" alt="agencia de marketing" class="ebook-icon">
+                <h3>GUÍA: Copys para Vender con IA</h3>
+                <p>Usa IA para crear textos persuasivos. Prompts probados, ejemplos reales y frameworks que funcionan.</p>
+                <div class="price">$89 MXN</div>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
                 <a href="#" class="btn">Descargar Ahora</a>
             </div>
         </div>
     </section>
 
+<<<<<<< HEAD
     <section class="cta-section" id="contacto">
         <h2>¿Listo para Crecer?</h2>
         <p>Únete a cientos de emprendedores que ya transformaron sus negocios</p>
@@ -643,6 +1294,70 @@
             <a href="#">💬</a>
             <a href="#">💼</a>
         </div>
+=======
+     <section id="contacto">
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>¿Listo para empezar?</h2>
+            <p>Cuéntame sobre tu proyecto y te responderé lo antes posible.</p>
+        </div>
+        
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" name="asunto" required placeholder="¿En qué te puedo ayudar?">
+            </div>
+            
+            <div class="form-group">
+                <label for="proyecto">Cuéntame sobre tu proyecto</label>
+                <textarea id="proyecto" name="proyecto" rows="5" required placeholder="Describe tu idea o proyecto..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">
+                <span>Enviar mensaje</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2L11 13"></path>
+                    <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                </svg>
+            </button>
+        </form>
+    </div>
+</section>
+
+    <section class="cta-section">
+        <h2>¿Listo para Crecer?</h2>
+        <p>Únete a cientos de emprendedores que ya transformaron sus negocios</p>
+        <a href="#servicios" class="btn">Comenzar Ahora</a>
+    </section>
+
+    <footer>
+       <footer>
+    <h3 style="font-size: 2rem; margin-bottom: 1rem;">CRUDA STUDIO</h3>
+    <p style="opacity: 0.8; margin-bottom: 2rem;">Marketing digital que funciona ✨</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com/crudastudio.mx?igsh=cXplMW01OGdwaHVp&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+        </a>
+        <a href="TU_URL_DE_FACEBOOK" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+            </svg>
+        </a>
+    </div>
+</footer>
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
         <p style="opacity: 0.6; margin-top: 2rem;">&copy; 2026 Cruda Studio. Todos los derechos reservados.</p>
     </footer>
 
@@ -660,6 +1375,43 @@
             });
         });
 
+<<<<<<< HEAD
+=======
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const asunto = document.getElementById('asunto').value;
+            const proyecto = document.getElementById('proyecto').value;
+            
+            // Crear el mensaje para WhatsApp
+            const mensaje = `*Nuevo contacto desde la web*%0A%0A` +
+                           `*Nombre:* ${nombre}%0A` +
+                           `*Email:* ${email}%0A` +
+                           `*Asunto:* ${asunto}%0A%0A` +
+                           `*Proyecto:*%0A${proyecto}`;
+            
+            // URL de WhatsApp
+            const whatsappURL = `https://api.whatsapp.com/send?phone=529984110765&text=${mensaje}`;
+            
+            // Abrir WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Limpiar formulario
+            form.reset();
+        });
+    } else {
+        console.error('No se encontró el formulario');
+    }
+});
+</script>
+
+>>>>>>> 32d92aa (Initial commit for CRUDA site)
     </script>
 </body>
 </html>

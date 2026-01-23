@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan SEO con IA - Cruda Studio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background: #f4efea;
+        }
+
+        header {
+            background: #000000;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid #f4efea;
+        }
+
+        header img {
+            max-width: 120px;
+        }
+
+        .workshop-hero {
+            background: #FFFFFF;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .workshop-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+         .workshop-hero .icon {
+       width: 320px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  object-fit: contain;
+}
+
+        .workshop-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #333;
+        }
+
+        .price-box {
+            background: #000000;
+            color: #f4efea;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .benefits {
+            background: #FFFFFF;
+            padding: 4rem 2rem;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            padding: 2rem;
+            background: #f4efea;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .benefit-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .benefit-card p {
+            color: #333;
+        }
+
+        .programa {
+            padding: 4rem 2rem;
+            background: #f4efea;
+        }
+
+        .programa h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .programa-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .programa-item {
+            padding: 1.5rem 0;
+            border-bottom: 2px solid #f4efea;
+        }
+
+        .programa-item:last-child {
+            border-bottom: none;
+        }
+
+        .programa-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .programa-item p {
+            color: #333;
+        }
+
+        .para-quien {
+            background: #FFFFFF;
+            padding: 4rem 2rem;
+        }
+
+        .para-quien h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .para-quien ul {
+            max-width: 700px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .para-quien li {
+            padding: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            background: #f4efea;
+            border-radius: 10px;
+        }
+
+        .para-quien li::before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .cta-final {
+            background: #000000;
+            color: #f4efea;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .cta-final p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #000000;
+            color: #f4efea;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            background: #f4efea;
+            color: #000000;
+        }
+
+        .info-boxes {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .info-box strong {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            background: #000000;
+            color: #f4efea;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #f4efea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .workshop-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .benefits h2,
+            .programa h2,
+            .para-quien h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="../mi-sito-web/logo1.png" alt="Cruda Studio">
+        </a>
+    </header>
+
+    <section class="workshop-hero">
+         <img src="../mi-sito-web/images/workshop4.webp" alt="agencia de marketing en cancun" class="icon">
+        <h1>Plan SEO Orgánico con IA</h1>
+        <p>Posiciónate en Google como pionero en tu nicho. Plan personalizado 1 a 1 usando inteligencia artificial para resultados rápidos.</p>
+        <div class="price-box">$900 MXN</div>
+        <a href="#inscripcion" class="btn">Reservar Workshop</a>
+    </section>
+
+    <section class="cta-final" id="inscripcion">
+        <h2>Sé parte del siguiente Workshop</h2>
+        <p>Solo 2 horas que cambiarán tu estrategia de posicionamiento orgánico para siempre.</p>
+        
+        <div class="info-boxes">
+            <div class="info-box">
+                <strong>📅 Fecha</strong>
+                <span>05 de Marzo</span>
+            </div>
+            <div class="info-box">
+                <strong>⏰ Duración</strong>
+                <span>2 horas</span>
+            </div>
+            <div class="info-box">
+                <strong>💻 Modalidad</strong>
+                <span>Presencial</span>
+            </div>
+        </div>
+
+        <a href="#" class="btn btn-light">Confirma tu asistencia</a>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Incluye plan de acción descargable, práctica y constancia de participación.</p>
+    </section>
+
+      <section class="programa">
+        <h2>Qué incluye tu sesión</h2>
+        <div class="programa-list">
+            <div class="programa-item">
+                <h3>Auditoría SEO Completa (30 min)</h3>
+                <p>Análisis de tu sitio actual, problemas técnicos, oportunidades de mejora inmediata.</p>
+            </div>
+            <div class="programa-item">
+                <h3>Investigación de Palabras Clave con IA (30 min)</h3>
+                <p>Keywords de baja competencia con alto potencial. Prompts de IA personalizados para tu nicho.</p>
+            </div>
+            <div class="programa-item">
+                <h3>Análisis de Competencia (20 min)</h3>
+                <p>Qué están haciendo bien tus competidores y cómo superarlos.</p>
+            </div>
+            <div class="programa-item">
+                <h3>Plan de Contenido (20 min)</h3>
+                <p>Calendario editorial con topics específicos que Google premiará.</p>
+            </div>
+            <div class="programa-item">
+                <h3>Implementación y Seguimiento (20 min)</h3>
+                <p>Pasos concretos a seguir, herramientas gratuitas y KPIs a medir.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="para-quien">
+        <h2>¿Para quién es esta sesión?</h2>
+        <ul>
+            <li>Negocios que quieren dejar de depender 100% de ads pagados</li>
+            <li>Emprendedores con contenido pero sin tráfico orgánico</li>
+            <li>Sitios web nuevos que necesitan tracción desde cero</li>
+            <li>Profesionales que quieren posicionarse como expertos en su área</li>
+            <li>Cualquiera que quiera entender SEO sin tecnicismos complicados</li>
+        </ul>
+    </section>
+
+    <section class="benefits">
+        <h2>¿Qué vas a lograr?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="icon">🤖</div>
+                <h3>IA Aplicada a SEO</h3>
+                <p>Usa ChatGPT y herramientas de IA para investigación de keywords y creación de contenido.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">📊</div>
+                <h3>Estrategia Personalizada</h3>
+                <p>Plan específico para TU negocio, TU competencia y TU mercado.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">⚡</div>
+                <h3>Resultados Rápidos</h3>
+                <p>Implementación inmediata de quick wins mientras trabajas el SEO de largo plazo.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">📈</div>
+                <h3>Tráfico Orgánico</h3>
+                <p>Deja de pagar por cada visita. Construye presencia sostenible en Google.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Cruda Studio. Todos los derechos reservados.</p>
+        <p><a href="index.html">← Volver al inicio</a></p>
+    </footer>
+</body>
+</html>
