@@ -1,1 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web - Cruda Studio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: #000000;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header img {
+            display: block;
+            margin: 0 auto 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero */
+        .hero {
+            background: #f4efea;
+            color: #000000;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            line-height: 1.15;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: #333;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #000000;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid #000000;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #000000;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 900;
+            color: #000000;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 650px;
+            margin: 0 auto 3.5rem;
+        }
+
+        /* Planes / Pricing */
+        #planes {
+            background: #ffffff;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            align-items: stretch;
+        }
+
+        .plan-card {
+            background: #ffffff;
+            border: 2px solid #e6e0d6;
+            border-radius: 20px;
+            padding: 2.8rem 2.2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .plan-card.featured {
+            background: #000000;
+            border-color: #000000;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .plan-tag {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f4efea;
+            color: #000000;
+            padding: 0.4rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .plan-name {
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-audience {
+            font-size: 0.98rem;
+            margin-bottom: 1.8rem;
+            opacity: 0.75;
+        }
+
+        .plan-card.featured .plan-audience {
+            opacity: 0.65;
+        }
+
+        .plan-price {
+            font-size: 2.6rem;
+            font-weight: 900;
+            margin-bottom: 0.2rem;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.6;
+        }
+
+        .plan-note {
+            font-size: 0.9rem;
+            opacity: 0.65;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2.2rem;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            padding: 0.55rem 0;
+            font-size: 0.98rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .plan-card.featured .plan-features li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .plan-features li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 0.4rem;
+        }
+
+        .plan-card .btn-secondary {
+            text-align: center;
+        }
+
+        .plan-card.featured .btn {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .plan-card.featured .btn-secondary {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .plan-card.featured .btn-secondary:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        @media (max-width: 968px) {
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plan-card.featured {
+                order: -1;
+            }
+        }
+
+        /* Incluye en todos los planes */
+        #incluye {
+            background: #f4efea;
+        }
+
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .include-item {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .include-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .include-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .include-item p {
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .includes-note {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.95rem;
+            color: #555;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Comparativa */
+        #comparativa {
+            background: #ffffff;
+        }
+
+        .compare-table-wrap {
+            overflow-x: auto;
+        }
+
+        table.compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 640px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            padding: 1.1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .compare-table th {
+            font-size: 0.95rem;
+            font-weight: 800;
+            background: #000;
+            color: #fff;
+        }
+
+        .compare-table th:first-child,
+        .compare-table td:first-child {
+            width: 30%;
+        }
+
+        .compare-table td {
+            font-size: 0.95rem;
+        }
+
+        .compare-table tr:nth-child(even) {
+            background: #faf8f5;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 6rem 2rem;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        .cta-section h2 {
+            color: #ffffff;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-section .btn {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
+
+        /* WhatsApp flotante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #000000;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo1.png" alt="Logo Cruda Studio" width="150">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="#incluye">Qué incluye</a></li>
+                <li><a href="#comparativa">Comparativa</a></li>
+                <li><a href="#contacto-cta">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Tu sitio web, sin letras chiquitas</h1>
+            <p>Landing pages, sitios completos y tiendas en línea. Todo tuyo desde el día uno: hosting, dominio conectado, correo, SEO y WhatsApp incluidos.</p>
+            <div class="hero-cta-group">
+                <a href="#planes" class="btn">Ver planes</a>
+                <a href="#contacto-cta" class="btn-secondary">Hablemos con la verdad</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="planes">
+        <h2>Elige tu plan</h2>
+        <p class="section-subtitle">Tres formas de tener presencia en internet, dependiendo de qué tan grande sea lo que quieres construir.</p>
+
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-name">One Landing</div>
+                <div class="plan-audience">Ideal para presentar un servicio, producto o promoción específica.</div>
+                <div class="plan-price">$5,000 <span>MXN</span></div>
+                <div class="plan-note">Pago único</div>
+                <ul class="plan-features">
+                    <li>1 página con todas las secciones en un solo scroll</li>
+                    <li>Diseño a tu medida, no una plantilla genérica</li>
+                    <li>Optimizado para verse bien en celular</li>
+                    <li>Formulario de contacto funcional</li>
+                </ul>
+                <a href="#contacto-cta" class="btn-secondary btn-full">Cotizar este plan</a>
+            </div>
+
+            <div class="plan-card featured">
+                <div class="plan-tag">El más pedido</div>
+                <div class="plan-name">Sitio Completo</div>
+                <div class="plan-audience">Para negocios que necesitan contar su historia completa, no solo una promoción.</div>
+                <div class="plan-price">$7,500 <span>MXN</span></div>
+                <div class="plan-note">Pago único</div>
+                <ul class="plan-features">
+                    <li>5 secciones: inicio, quién eres, servicios, testimonios y contacto</li>
+                    <li>Diseño a tu medida, no una plantilla genérica</li>
+                    <li>Optimizado para verse bien en celular</li>
+                    <li>Formulario de contacto funcional</li>
+                    <li>Estructura pensada para crecer con tu negocio</li>
+                </ul>
+                <a href="#contacto-cta" class="btn btn-full">Cotizar este plan</a>
+            </div>
+
+            <div class="plan-card">
+                <div class="plan-name">Tienda en Línea</div>
+                <div class="plan-audience">Para vender productos directamente desde tu propio sitio.</div>
+                <div class="plan-price">$15,000 <span>MXN</span></div>
+                <div class="plan-note">Pago único</div>
+                <ul class="plan-features">
+                    <li>Catálogo de productos con carrito de compra</li>
+                    <li>Pasarela de pagos configurada</li>
+                    <li>Gestión de inventario básica</li>
+                    <li>Diseño a tu medida, no una plantilla genérica</li>
+                    <li>Optimizado para verse bien en celular</li>
+                </ul>
+                <a href="#contacto-cta" class="btn-secondary btn-full">Cotizar este plan</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="incluye">
+        <h2>Todos los planes incluyen</h2>
+        <p class="section-subtitle">Sin costos escondidos ni "eso se cobra aparte". Esto viene incluido sin importar qué plan elijas.</p>
+
+        <div class="includes-grid">
+            <div class="include-item">
+                <div class="include-icon">🖥️</div>
+                <h3>Hosting de por vida</h3>
+                <p>Tu sitio queda alojado sin que tengas que pagar renta de hosting nunca más.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">🌐</div>
+                <h3>Configuración de DNS</h3>
+                <p>Conectamos tu dominio para que tu sitio funcione desde el primer día.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">🔒</div>
+                <h3>Certificado SSL</h3>
+                <p>Candado de seguridad activo para que tus visitantes naveguen protegidos.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">📧</div>
+                <h3>Correo corporativo</h3>
+                <p>Un correo con el nombre de tu negocio, no un Gmail o Hotmail genérico.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">🔎</div>
+                <h3>SEO básico</h3>
+                <p>Tu sitio configurado para que Google entienda de qué trata tu negocio.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">🗺️</div>
+                <h3>Sitemap</h3>
+                <p>Mapa de tu sitio para que los buscadores lo recorran sin perderse nada.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">📍</div>
+                <h3>Indexación en Google</h3>
+                <p>Enviamos tu sitio a Google para que empiece a aparecer en resultados de búsqueda.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">💬</div>
+                <h3>Botón de WhatsApp</h3>
+                <p>Botón flotante visible en todo el sitio para que te contacten en un clic.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">📲</div>
+                <h3>Redirección con mensaje preestablecido</h3>
+                <p>Cada botón abre WhatsApp con un mensaje ya escrito según de dónde venga el clic.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">📌</div>
+                <h3>Integración con Google Maps</h3>
+                <p>Vinculamos la ubicación de tu negocio para que te encuentren fácilmente.</p>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">✅</div>
+                <h3>Todo es tuyo al entregarte el sitio</h3>
+                <p>El sitio, el código y las cuentas quedan a tu nombre desde el día de la entrega.</p>
+            </div>
+        </div>
+
+        <p class="includes-note">*No incluye el dominio. En el plan de Tienda en Línea, algunos de estos elementos pueden variar según la pasarela de pagos y el proveedor de inventario que se use — se define en la cotización.</p>
+    </section>
+
+    <section id="comparativa">
+        <h2>Comparativa rápida</h2>
+        <p class="section-subtitle">Para que decidas de un vistazo cuál va con lo que necesitas.</p>
+
+        <div class="compare-table-wrap">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>One Landing</th>
+                        <th>Sitio Completo</th>
+                        <th>Tienda en Línea</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Precio</td>
+                        <td>$5,000 MXN</td>
+                        <td>$7,500 MXN</td>
+                        <td>$15,000 MXN</td>
+                    </tr>
+                    <tr>
+                        <td>Secciones</td>
+                        <td>1 página, un scroll</td>
+                        <td>5 secciones</td>
+                        <td>Catálogo + páginas de producto</td>
+                    </tr>
+                    <tr>
+                        <td>Ideal para</td>
+                        <td>Promoción o servicio único</td>
+                        <td>Presencia completa del negocio</td>
+                        <td>Venta de productos en línea</td>
+                    </tr>
+                    <tr>
+                        <td>Carrito de compra</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Hosting, DNS, SSL, correo</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>SEO, sitemap e indexación</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>WhatsApp con mensajes preestablecidos</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Google Maps integrado</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Dominio incluido</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>Varía según cotización</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contacto-cta">
+        <h2>¿Cuál te late más?</h2>
+        <p>Cuéntame de tu negocio y te ayudo a elegir el plan correcto.</p>
+        <a href="https://api.whatsapp.com/send?phone=529984110765&text=Hola%2C%20quiero%20cotizar%20un%20sitio%20web" class="btn" target="_blank" rel="noopener noreferrer">Cotizar por WhatsApp</a>
+    </section>
+
+    <footer>
+        <h3 style="font-size: 2rem; margin-bottom: 1rem;">CRUDA STUDIO</h3>
+        <p style="opacity: 0.8; margin-bottom: 2rem;">Marketing digital que funciona ✨</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/crudastudio.mx?igsh=cXplMW01OGdwaHVp&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="TU_URL_DE_FACEBOOK" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                </svg>
+            </a>
+        </div>
+        <p style="opacity: 0.6; margin-top: 2rem;">&copy; 2026 Cruda Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=529984110765&text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Desarrollo%20Web" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12.002 2C6.478 2 2 6.478 2 12c0 1.786.469 3.463 1.288 4.916L2 22l5.221-1.263A9.94 9.94 0 0 0 12.002 22C17.524 22 22 17.522 22 12S17.524 2 12.002 2zm0 18.06c-1.61 0-3.113-.446-4.397-1.221l-.316-.187-3.098.749.759-3.098-.207-.324A7.94 7.94 0 0 1 4.04 12c0-4.396 3.567-7.96 7.962-7.96 4.396 0 7.96 3.564 7.96 7.96 0 4.395-3.564 7.96-7.96 7.96z"/>
+        </svg>
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.length > 1) {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
