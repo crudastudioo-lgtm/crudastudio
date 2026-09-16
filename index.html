@@ -79,6 +79,15 @@
     font-size: 1.4rem;
     margin-bottom: 2.5rem;
 }
+
+        /* Hero CTA group */
+.hero-cta-group {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+        
         /* Buttons */
         .btn {
             display: inline-block;
@@ -116,10 +125,23 @@
             color: #000000;
         }
 
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
+.btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: #000000;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid #000000;
+    transition: all 0.3s;
 }
 
+.btn-secondary:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
         /* Why Cruda Section */
         #why-cruda {
             background: #ffffff;
@@ -270,6 +292,9 @@
     .stat-item h3 {
         font-size: 2rem;
     }
+    .hero-cta-group {
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Services Section */
@@ -759,13 +784,15 @@
     </header>
 
     <section class="hero" id="inicio">  
-    </div>
-        <div class="hero-content">
-            <h1>La Verdad Cruda<br>del Marketing Digital</h1>
-            <p>Marketing digital sin humo, crece tu negocio en serio. No necesitas likes, necesitas ventas.</p>
-            <a href="#workshops" class="btn">Hablemos con la verdad</a>
+    <div class="hero-content">
+        <h1>La Verdad Cruda<br>del Marketing Digital</h1>
+        <p>Marketing digital sin humo, crece tu negocio en serio. No necesitas likes, necesitas ventas.</p>
+        <div class="hero-cta-group">
+            <a href="#servicios" class="btn">Quiero un sitio web</a>
+            <a href="#workshops" class="btn-secondary">Hablemos con la verdad</a>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="about-me">
     <div class="about-container">
